@@ -1,0 +1,11 @@
+{
+  "name": "docs-bot",
+  "version": "1.0.0",
+  "description": "Dynamic Documentation searching bot from docs commands",
+  "main": "index.js",
+  "author": "Leo Knudsen",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
