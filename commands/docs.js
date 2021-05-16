@@ -17,7 +17,7 @@ module.exports = {
             let documentation = urls.filter((url) => url.name === args[0])[0]; // documentation url
             if (documentation) {
                 const name = documentation.name;
-                let url = documentation.url; 
+                let url = documentation.url;  
 
                 let embedTitle = args[0];
 
