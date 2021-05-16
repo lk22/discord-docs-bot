@@ -60,7 +60,7 @@ let urls = [
  * fire a command on a / command message
  */
 client.on('message', message => {
-    // console.log(urls)
+    
     /**
      * validate author is not bot or the message starts with "/"
      */
@@ -121,7 +121,7 @@ client.on('message', message => {
      * if message is /docs
      * executing docs command, generating a shortcut to requested language or framework => /docs laravel blade -> https://laravel.com/docs/blade
      */
-    if (command === "docs") {
+    if (command === "find") {
         client.commands.get('docs').execute(message, args, urls)
     }
 
