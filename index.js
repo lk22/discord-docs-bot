@@ -37,7 +37,7 @@ let urls = [
     { name: "python", url: "https://docs.python.org" },
     { name: "django", url: "https://docs.djangoproject.com" },
     { name: "c#", url: "https://docs.microsoft.com/en-us/dotnet/csharp" },
-    { name: "php", url: "https://php.net/docs" },
+    { name: "php", url: "https://php.net/docs/en" },
     { name: "react", url: "https://reactjs.org/docs" },
     { name: "vue", url: "https://php.net/docs" },
 ]
