@@ -34,7 +34,7 @@ module.exports = {
                 } else {
                     newDocumentation.url = args[1];
                     urls.push(newDocumentation);
-                    message.channel.send(`I have now learned the documentation to "${newDocumentation.name}" with following url: "${newDocumentation.url}"`);
+                    message.channel.send(`I have now learned the documentation to "${newDocumentation.name}" with following url: "${newDocumentation.url}" you can now run /find git to visit git documentation.`);
                 }
             }
         }
