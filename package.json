@@ -6,7 +6,7 @@
   "author": "Leo Knudsen",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "build": "node index.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
