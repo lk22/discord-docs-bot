@@ -11,7 +11,6 @@ module.exports = {
         const count = urls.length;
         let list = "i found following documentations for you i found " + count + " documentations in my registry \n";
         urls.map((url) => {
-            console.log(url)
             list += " " + url.name + " => " + url.url + "\n";
         });
 

@@ -88,7 +88,6 @@ client.on('message', message => {
         embed.setTitle('Documentation list');
         let list = "I see you mentioned documentation in you message, i found following documentations for you \n";
         urls.map((url) => {
-            console.log(url)
             list += " " + url.name + " => " + url.url + "\n";
         });
         embed.setDescription(list)
