@@ -38,7 +38,7 @@ const commandsList = [
     { name: "/help", description: "Grants you the command list for DocsBot" },
     { name: "/find", description: "Gives you are shortcut to existing documentation from requested arguments" },
     { name: "/learn", description: "Makes DocsBot learn new documentations with a path to the learning docs" },
-    { name: "/list", description: "Listing all documentation shortcuts" }
+    { name: "/list-docs", description: "Listing all documentation shortcuts" }
 ];
  
 
