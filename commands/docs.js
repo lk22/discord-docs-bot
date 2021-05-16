@@ -24,7 +24,15 @@ module.exports = {
 
                 if (args[1]) {
                     url += "/" + args[1];
+                    url += (documentation.prefix) ? documentation.prefix : "";
                     embedTitle += " " + args[1]
+                }
+
+                if (args > 1) {
+                    args.map((argument) => {
+                        url += "/" + argument;
+                        embedTitle += " " + argument;
+                    });
                 }
 
                 embedTitle += " documentation";

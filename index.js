@@ -1,6 +1,7 @@
-const Discord = require('discord.js');
 const fileSystem = require('fs');
-const { url } = require('inspector');
+const dotenv = require('dotenv');
+const env = dotenv.config();
+const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const command_prefix = "-";
@@ -50,11 +51,12 @@ let urls = [
     { name: "django", url: "https://docs.djangoproject.com" },
     { name: "c#", url: "https://docs.microsoft.com/en-us/dotnet/csharp" },
     { name: "php", url: "https://php.net/docs/en" },
-    { name: "react", url: "https://reactjs.org/docs" },
+    { name: "react", url: "https://reactjs.org/docs", prefix: ".html"},
     { name: "vue", url: "https://vuejs.org/v2/guide" },
     { name: "javascript", url: "https://www.javascript.com/learn" },
     { name: "c++", url: "https://www.cplusplus.com/doc" },
-    { name: "tailwind", url: "https://tailwindcss.com/docs"}
+    { name: "tailwind", url: "https://tailwindcss.com/docs" },
+    { name: "nodejs", url: "https://nodejs.org/api", prefix: ".html" }
 ]
 
 /**
@@ -135,4 +137,4 @@ client.on('message', message => {
     }
 })
 
-client.login('ODQzMTYyMzMwMzc1NjUxMzQ4.YJ_2HA.7-0QAS7swkGwEyD3ZCvojB0P7E8');
+client.login(env.parsed.DOCS_BOT_CLIENT_KEY);
