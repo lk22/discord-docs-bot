@@ -15,7 +15,6 @@ module.exports = {
             message.channel.send(`I dont know that you are looking for "${args[0]}" if you are sure the documentation exists i can learn the way via my /learn command`);
         } else {
             let documentation = urls.filter((url) => url.name === args[0])[0]; // documentation url
-            console.log(documentation)
             if (documentation) {
                 const name = documentation.name;
                 let url = documentation.url;

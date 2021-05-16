@@ -17,7 +17,6 @@ const commandFiles = fileSystem.readdirSync('./commands/').filter(file => file.e
  * require each found command
  */
 for (const file of commandFiles) {
-    console.log("Loading command: " + file)
     const command = require(`./commands/${file}`);
 
     client.commands.set(command.name, command);
