@@ -1,0 +1,52 @@
+[
+  {
+    "name": "laravel",
+    "url": "https://laravel.com/docs"
+  },
+  {
+    "name": "typescript",
+    "url": "https://typescriptlang.org/docs/handbook" 
+  },
+  { 
+    "name": "mysql", 
+    "url": "https://mysql.org/doc" 
+  },
+  { 
+    "name": "python", 
+    "url": "https://docs.python.org" 
+  },
+  { 
+    "name": "django", 
+    "url": "https://docs.djangoproject.com" 
+  },
+  { 
+    "name": "c#", 
+    "url": "https://docs.microsoft.com/en-us/dotnet/csharp" 
+  },
+  { 
+    "name": "php", 
+    "url": "https://php.net/docs/en" 
+  },
+  { 
+    "name": "react", 
+    "url": "https://reactjs.org/docs", 
+    "prefix": ".html"
+  },
+  { 
+    "name": "vue", 
+    "url": "https://vuejs.org/v2/guide" 
+  },
+  { 
+    "name": "c++", 
+    "url": "https://www.cplusplus.com/doc" 
+  },
+  { 
+    "name": "tailwind", 
+    "url": "https://tailwindcss.com/docs" 
+  },
+  { 
+    "name": "nodejs", 
+    "url": "https://nodejs.org/api", 
+   "prefix": ".html" 
+  }
+]

@@ -4,6 +4,8 @@ const env = dotenv.config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const docs = require('./documentations.json');
+
 const command_prefix = "-";
 
 client.commands = new Discord.Collection();
@@ -39,24 +41,8 @@ const commandsList = [
     { name: "/list", description: "Listing all documentation shortcuts" }
 ];
 
-/**
- * documentations 
- */
-let urls = [
-    { name: "laravel", url: "https://laravel.com/docs" },
-    { name: "typescript", url: "https://typescriptlang.org/docs/handbook" },
-    { name: "mysql", url: "https://mysql.org/doc" },
-    { name: "python", url: "https://docs.python.org" },
-    { name: "django", url: "https://docs.djangoproject.com" },
-    { name: "c#", url: "https://docs.microsoft.com/en-us/dotnet/csharp" },
-    { name: "php", url: "https://php.net/docs/en" },
-    { name: "react", url: "https://reactjs.org/docs", prefix: ".html"},
-    { name: "vue", url: "https://vuejs.org/v2/guide" },
-    { name: "javascript", url: "https://www.javascript.com/learn" },
-    { name: "c++", url: "https://www.cplusplus.com/doc" },
-    { name: "tailwind", url: "https://tailwindcss.com/docs" },
-    { name: "nodejs", url: "https://nodejs.org/api", prefix: ".html" }
-]
+console.log(docs)
+
 
 /**
  * fire a command on a / command message
@@ -115,7 +101,7 @@ client.on('message', message => {
      * list all know documentations
      */
     if (command === "list-docs") {
-        client.commands.get('list').execute(message, args, urls);
+        client.commands.get('list').execute(message, args, docs);
     }
 
     /**
@@ -123,7 +109,7 @@ client.on('message', message => {
      * executing docs command, generating a shortcut to requested language or framework => /docs laravel blade -> https://laravel.com/docs/blade
      */
     if (command === "find") {
-        client.commands.get('docs').execute(message, args, urls)
+        client.commands.get('docs').execute(message, args, docs)
     }
 
     /**
@@ -131,7 +117,7 @@ client.on('message', message => {
      * executing learn command to tell DocsBot a new path to a documentation site
      */
     if (command === "learn") {
-        client.commands.get('learn').execute(message, args, urls)
+        client.commands.get('learn').execute(message, args, docs)
     }
 })
 
