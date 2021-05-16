@@ -53,7 +53,8 @@ let urls = [
     { name: "react", url: "https://reactjs.org/docs" },
     { name: "vue", url: "https://vuejs.org/v2/guide" },
     { name: "javascript", url: "https://www.javascript.com/learn" },
-    { name: "c++", url: "https://www.cplusplus.com/doc" }
+    { name: "c++", url: "https://www.cplusplus.com/doc" },
+    { name: "tailwind", url: "https://tailwindcss.com/docs"}
 ]
 
 /**
