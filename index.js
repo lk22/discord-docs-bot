@@ -31,6 +31,16 @@ client.once('ready', () => {
  */
 let embed = new Discord.MessageEmbed().setColor('0xff0000');
 
+const commandsList = [
+    { name: "/ping", description: "Helping you testing the bots connection status" },
+    { name: "/help", description: "Grants you the command list for DocsBot" },
+    { name: "/docs", description: "Gives you are shortcut to existing documentation from requested arguments" },
+    { name: "/learn", description: "Makes DocsBot learn new documentations with a path to the learning docs" }
+];
+
+/**
+ * documentations 
+ */
 let urls = [
     { name: "laravel", url: "https://laravel.com/docs" },
     { name: "typescript", url: "https://typescriptlang.org/docs/handbook" },
@@ -41,6 +51,8 @@ let urls = [
     { name: "php", url: "https://php.net/docs/en" },
     { name: "react", url: "https://reactjs.org/docs" },
     { name: "vue", url: "https://vuejs.org/v2/guide" },
+    { name: "javascript", url: "https://www.javascript.com/learn" },
+    { name: "c++", url: "https://www.cplusplus.com/doc" }
 ]
 
 /**
@@ -70,12 +82,14 @@ client.on('message', message => {
         message.content.indexOf('Dokumentation') > -1 ||
         message.content.indexOf('dokumentation') > -1
     ) {
+        embed.setTitle('Documentation list');
         let list = "I see you mentioned documentation in you message, i found following documentations for you \n";
         urls.map((url) => {
             console.log(url)
             list += " " + url.name + " => " + url.url + "\n";
         });
-        message.channel.send(list);
+        embed.setDescription(list)
+        message.channel.send(embed);
     }
 
     /**
@@ -91,7 +105,7 @@ client.on('message', message => {
      * Showing help for commands list /commands/help.js
      */
     if (command === "help") {
-        client.commands.get('help').execute(message, args)
+        client.commands.get('help').execute(message, args, commandsList)
     }
 
     /**
@@ -107,7 +121,7 @@ client.on('message', message => {
      * executing learn command to tell DocsBot a new path to a documentation site
      */
     if (command === "learn") {
-        client.commands.get('learn').execute(message, args)
+        client.commands.get('learn').execute(message, args, urls)
     }
 })
 
