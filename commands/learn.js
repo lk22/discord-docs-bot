@@ -14,8 +14,6 @@ module.exports = {
             }
         }
 
-        
-
         // else if (documentation.url === args[1]) {
         //     message.channel.send()
         // }

@@ -33,7 +33,6 @@ module.exports = {
                 embed.setURL(url)
                 message.channel.send(`You requested following documentation ${args[0]} ${(args[1]) ? args[1] : ''}`);
                 message.channel.send(embed);
-
             }
         }
     }
