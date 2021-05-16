@@ -113,7 +113,7 @@ client.on('message', message => {
      * if command is /list
      * list all know documentations
      */
-    if (command === "list") {
+    if (command === "list-docs") {
         client.commands.get('list').execute(message, args, urls);
     }
 
