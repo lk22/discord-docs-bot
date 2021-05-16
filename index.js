@@ -137,4 +137,4 @@ client.on('message', message => {
     }
 })
 
-client.login(env.parsed.DOCS_BOT_CLIENT_KEY);
+client.login(process.env.DOCS_BOT_CLIENT_KEY);
