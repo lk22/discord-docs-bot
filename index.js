@@ -40,9 +40,7 @@ const commandsList = [
     { name: "/learn", description: "Makes DocsBot learn new documentations with a path to the learning docs" },
     { name: "/list", description: "Listing all documentation shortcuts" }
 ];
-
-console.log(docs)
-
+ 
 
 /**
  * fire a command on a / command message
