@@ -1,11 +1,12 @@
 const Discord = require('discord.js');
 const fileSystem = require('fs');
+const { url } = require('inspector');
 const client = new Discord.Client();
 
 const command_prefix = "-";
 
 client.commands = new Discord.Collection();
- 
+
 /**
  * scanning through commands folder
  */
@@ -17,7 +18,7 @@ const commandFiles = fileSystem.readdirSync('./commands/').filter(file => file.e
 for (const file of commandFiles) {
     console.log("Loading command: " + file)
     const command = require(`./commands/${file}`);
- 
+
     client.commands.set(command.name, command);
 }
 
@@ -39,7 +40,7 @@ let urls = [
     { name: "c#", url: "https://docs.microsoft.com/en-us/dotnet/csharp" },
     { name: "php", url: "https://php.net/docs/en" },
     { name: "react", url: "https://reactjs.org/docs" },
-    { name: "vue", url: "https://php.net/docs" },
+    { name: "vue", url: "https://vuejs.org/v2/guide" },
 ]
 
 /**
@@ -59,6 +60,23 @@ client.on('message', message => {
      */
     const args = message.content.slice(command_prefix.length).split(" ");
     const command = args.shift().toLowerCase();
+
+    /**
+     * let DocsBot listen for documentation related words in a message
+     */
+    if (
+        message.content.indexOf('Documentation') > -1 ||
+        message.content.indexOf('documentation') > -1 ||
+        message.content.indexOf('Dokumentation') > -1 ||
+        message.content.indexOf('dokumentation') > -1
+    ) {
+        let list = "I see you mentioned documentation in you message, i found following documentations for you \n";
+        urls.map((url) => {
+            console.log(url)
+            list += " " + url.name + " => " + url.url + "\n";
+        });
+        message.channel.send(list);
+    }
 
     /**
      * if message is /ping
