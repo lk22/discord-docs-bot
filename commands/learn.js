@@ -3,19 +3,39 @@ module.exports = {
     description: 'Make DocsBot learning a new path to a current documentation site with a new url',
     execute(message, args, urls) {
         let documentation = urls.filter((url) => url.name === args[0]);
+
         if (args.length < 1) {
-            message.channel.send("I found no url argument to learn please provide an url i need to learn to update my documentation list");
+            message.channel.send("I need to learn a name for the documentation");
         } else {
-            /**
-             * check for existing documentation name and url existence
-             */
-            if (documentation.name === args[0]) {
-                message.channel.send(`I allready know that documentation run /docs ${args[0]}`);
+            if (documentation.length) {
+                if (args[0] === documentation[0].name) {
+                    message.channel.send(`I know the documentation ${args[0]} run /docs ${args[0]}`);
+                } else {
+                    documentation[0].name = args[0];
+                    message.channel.send(`Documentation ${args[0]} name updated -> ${args[0]}`);
+                    return;
+                }
+
+                if (args[1] && args[1] != documentation[0].url) {
+                    documentation[0].url = args[1];
+                    message.channel.send(`Documentation ${args[0]} url updated -> ${args[1]}`); return;
+                } else {
+                    message.channel.send(`I know the requested url to the documentation ${args[0]} run /docs ${args[0]}`);
+                    return;
+                }
+            } else {
+                let newDocumentation = {
+                    name: args[0],
+                    url: ""
+                };
+
+                if ( !args[1] ) {
+                    message.channel.send("I need to learn a url path for the documentation");
+                } else {
+                    newDocumentation.url = args[1];
+                    urls.push(newDocumentation);
+                }
             }
         }
-
-        // else if (documentation.url === args[1]) {
-        //     message.channel.send()
-        // }
     }
 }

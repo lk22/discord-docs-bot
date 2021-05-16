@@ -35,7 +35,8 @@ const commandsList = [
     { name: "/ping", description: "Helping you testing the bots connection status" },
     { name: "/help", description: "Grants you the command list for DocsBot" },
     { name: "/docs", description: "Gives you are shortcut to existing documentation from requested arguments" },
-    { name: "/learn", description: "Makes DocsBot learn new documentations with a path to the learning docs" }
+    { name: "/learn", description: "Makes DocsBot learn new documentations with a path to the learning docs" },
+    { name: "/list", description: "Listing all documentation shortcuts" }
 ];
 
 /**
@@ -59,7 +60,7 @@ let urls = [
  * fire a command on a / command message
  */
 client.on('message', message => {
-
+    // console.log(urls)
     /**
      * validate author is not bot or the message starts with "/"
      */
@@ -106,6 +107,14 @@ client.on('message', message => {
      */
     if (command === "help") {
         client.commands.get('help').execute(message, args, commandsList)
+    }
+
+    /**
+     * if command is /list
+     * list all know documentations
+     */
+    if (command === "list") {
+        client.commands.get('list').execute(message, args, urls);
     }
 
     /**
