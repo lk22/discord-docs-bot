@@ -34,7 +34,7 @@ let embed = new Discord.MessageEmbed().setColor('0xff0000');
 const commandsList = [
     { name: "/ping", description: "Helping you testing the bots connection status" },
     { name: "/help", description: "Grants you the command list for DocsBot" },
-    { name: "/docs", description: "Gives you are shortcut to existing documentation from requested arguments" },
+    { name: "/find", description: "Gives you are shortcut to existing documentation from requested arguments" },
     { name: "/learn", description: "Makes DocsBot learn new documentations with a path to the learning docs" },
     { name: "/list", description: "Listing all documentation shortcuts" }
 ];
@@ -60,7 +60,7 @@ let urls = [
  * fire a command on a / command message
  */
 client.on('message', message => {
-    
+
     /**
      * validate author is not bot or the message starts with "/"
      */
