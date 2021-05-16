@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Leo Knudsen",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "discord.js": "^12.5.3",
