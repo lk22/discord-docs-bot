@@ -75,7 +75,7 @@ client.on('message', message => {
             list += " " + url.name + " => " + url.url + "\n";
         });
         embed.setDescription(list)
-        message.channel.send(embed);
+        message.channel.send(embed); 
     }
 
     /**
