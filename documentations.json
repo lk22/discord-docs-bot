@@ -382,7 +382,7 @@
            "links":[
               {
                  "name":"Laravel API Documentation",
-                 "url":"https://laravel.com/docs/valet"
+                 "url":"https://laravel.com/api/8.x/"
               }
            ]
         }

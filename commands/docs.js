@@ -19,14 +19,20 @@ module.exports = {
             if (documentation) {
                 const name = documentation.name;
                 let url = documentation.url;
+                console.log(url)
                 const categories = documentation.categories;
 
                 let embedTitle = args[0];
 
-                if (args[1] === "--list" && categories.length || !args[1] && categories.length) {
+                if (!args[1] && categories.length > 0) {
                     let categoryList = `I found ${categories.length} categories on ${args[0]} \n\n`;
+                    console.log(categories);
                     categories.map((category) => {
-                        categoryList += "- " + category.name + "\n";
+                        categoryList += "- " + category.name;;
+                        if (category.url) {
+                            categoryList += ": " + category.url;
+                        }
+                        categoryList += " \n";
                     });
 
                     let categoryEmbed = embed;
@@ -38,35 +44,24 @@ module.exports = {
                     const category = documentation.categories.filter((cat) => cat.name === args[1]);
 
                     if (category[0].name === args[1] && category[0].links) {
-                        let subCategoryList = `I found ${category[0].links.length} in your request \n`;
+                        let subCategoryList = "";
                         
                         category[0].links.map((link) => {
                             subCategoryList += link.name + " => " + link.url + "\n";
                         });
 
                         let subCategoryEmbed = embed;
-                        subCategoryEmbed.setTitle(args[1] + " categories");
+                        subCategoryEmbed.setTitle("I found following documentation in category: " + args[1]);
                         subCategoryEmbed.setDescription(subCategoryList);
                         message.channel.send(subCategoryEmbed);
                     }
                 } else {
-                    embedTitle += " documentation";
+                    embedTitle += `You requested following documentation ${args[0]} ${(args[1]) ? args[1] : ''}`;
                     embed.setTitle(embedTitle);
                     embed.setColor("0xff0000");
                     embed.setURL(url)
-                    message.channel.send(`You requested following documentation ${args[0]} ${(args[1]) ? args[1] : ''}`);
                     message.channel.send(embed);
                 }
-                // else if (args[1]) {
-                //     url += "/" + args[1];
-                //     url += (documentation.prefix) ? documentation.prefix : "";
-                //     embedTitle += " " + args[1]
-                // } else if (args > 1) {
-                //     args.map((argument) => {
-                //         url += "/" + argument;
-                //         embedTitle += " " + argument;
-                //     });
-                // }
             }
         }
     }

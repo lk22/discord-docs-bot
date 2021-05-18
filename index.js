@@ -1,6 +1,5 @@
 const fileSystem = require('fs');
 const dotenv = require('dotenv');
-const env = dotenv.config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -20,7 +19,6 @@ const commandFiles = fileSystem.readdirSync('./commands/').filter(file => file.e
  */
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
-
     client.commands.set(command.name, command);
 }
 
@@ -40,7 +38,6 @@ const commandsList = [
     { name: "/learn", description: "Makes DocsBot learn new documentations with a path to the learning docs" },
     { name: "/list-docs", description: "Listing all documentation shortcuts" } 
 ];
- 
 
 /**
  * fire a command on a / command message
