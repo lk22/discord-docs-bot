@@ -1,52 +1,499 @@
 [
   {
-    "name": "laravel",
-    "url": "https://laravel.com/docs"
+     "name":"laravel",
+     "url":"https://laravel.com/docs",
+     "categories":[
+        {
+           "name":"prologue",
+           "links":[
+              {
+                 "name":"Release date",
+                 "url":"https://laravel.com/docs/releases"
+              },
+              {
+                 "name":"Upgrade guide",
+                 "url":"https://laravel.com/docs/upgrade"
+              },
+              {
+                 "name":"Contributions guide",
+                 "url":"https://laravel.com/docs/contributions"
+              }
+           ]
+        },
+        {
+           "name":"getting-started",
+           "links":[
+              {
+                 "name":"Installation guide",
+                 "url":"https://laravel.com/docs/installation"
+              },
+              {
+                 "name":"Configuration",
+                 "url":"https://laravel.com/docs/configuration"
+              },
+              {
+                 "name":"Directory structure",
+                 "url":"https://laravel.com/docs/structure"
+              },
+              {
+                 "name":"Starter kits",
+                 "url":"https://laravel.com/docs/starter-kits"
+              },
+              {
+                 "name":"Deployments",
+                 "url":"https://laravel.com/docs/deployment"
+              }
+           ]
+        },
+        {
+           "name":"concepts",
+           "links":[
+              {
+                 "name":"Request Life",
+                 "url":"https://laravel.com/docs/container"
+              },
+              {
+                 "name":"Service Container",
+                 "url":"https://laravel.com/docs/container"
+              },
+              {
+                 "name":"Service Providers",
+                 "url":"https://laravel.com/docs/providers"
+              },
+              {
+                 "name":"Facades",
+                 "url":"https://laravel.com/docs/facades"
+              }
+           ]
+        },
+        {
+           "name":"basics",
+           "links":[
+              {
+                 "name":"Routing",
+                 "url":"https://laravel.com/docs/routing"
+              },
+              {
+                 "name":"Middlewares",
+                 "url":"https://laravel.com/docs/middleware"
+              },
+              {
+                 "name":"CSRF (Cross Site Request Forgery)",
+                 "url":"https://laravel.com/docs/csrf"
+              },
+              {
+                 "name":"Requests",
+                 "url":"https://laravel.com/docs/requests"
+              },
+              {
+                 "name":"Responses",
+                 "url":"https://laravel.com/docs/responses"
+              },
+              {
+                 "name":"Views",
+                 "url":"https://laravel.com/docs/views"
+              },
+              {
+                 "name":"Blade Templates",
+                 "url":"https://laravel.com/docs/blade"
+              },
+              {
+                 "name":"Url Generationn",
+                 "url":"https://laravel.com/docs/urls"
+              },
+              {
+                 "name":"Sessions",
+                 "url":"https://laravel.com/docs/session"
+              },
+              {
+                 "name":"Validation",
+                 "url":"https://laravel.com/docs/validation"
+              },
+              {
+                 "name":"Error handling",
+                 "url":"https://laravel.com/docs/errors"
+              },
+              {
+                 "name":"Logging",
+                 "url":"https://laravel.com/docs/logging"
+              }
+           ]
+        },
+        {
+           "name":"advanced",
+           "links":[
+              {
+                 "name":"Artisan Console",
+                 "url":"https://laravel.com/docs/artisan"
+              },
+              {
+                 "name":"broadcasting",
+                 "url":"https://laravel.com/docs/broadcasting"
+              },
+              {
+                 "name":"cache",
+                 "url":"https://laravel.com/docs/cache"
+              },
+              {
+                 "name":"Collections",
+                 "url":"https://laravel.com/docs/collections"
+              },
+              {
+                 "name":"Compiling Assets (Laravel Mix)",
+                 "url":"https://laravel.com/docs/mix"
+              },
+              {
+                 "name":"Contracts",
+                 "url":"https://laravel.com/docs/contracts"
+              },
+              {
+                 "name":"Events",
+                 "url":"https://laravel.com/docs/events"
+              },
+              {
+                 "name":"File Storage",
+                 "url":"https://laravel.com/docs/filesystem"
+              },
+              {
+                 "name":"Helpers",
+                 "url":"https://laravel.com/docs/helpers"
+              },
+              {
+                 "name":"HTTP Client",
+                 "url":"https://laravel.com/docs/http-client"
+              },
+              {
+                 "name":"Localization",
+                 "url":"https://laravel.com/docs/localization"
+              },
+              {
+                 "name":"Mail",
+                 "url":"https://laravel.com/docs/mail"
+              },
+              {
+                 "name":"Notifications",
+                 "url":"https://laravel.com/docs/notifications"
+              },
+              {
+                 "name":"Package Development",
+                 "url":"https://laravel.com/docs/packages"
+              },
+              {
+                 "name":"Queues",
+                 "url":"https://laravel.com/docs/queues"
+              },
+              {
+                 "name":"Task Scheduling",
+                 "url":"https://laravel.com/docs/scheduling"
+              }
+           ]
+        },
+        {
+           "name":"security",
+           "links":[
+              {
+                 "name":"Authentication",
+                 "url":"https://laravel.com/docs/authentication"
+              },
+              {
+                 "name":"Authorization",
+                 "url":"https://laravel.com/docs/authorization"
+              },
+              {
+                 "name":"Email Verification",
+                 "url":"https://laravel.com/docs/verification"
+              },
+              {
+                 "name":"Encryption",
+                 "url":"https://laravel.com/docs/encryption"
+              },
+              {
+                 "name":"Hashing",
+                 "url":"https://laravel.com/docs/hashing"
+              },
+              {
+                 "name":"Resetting Passwords",
+                 "url":"https://laravel.com/docs/passwords"
+              }
+           ]
+        },
+        {
+           "name":"database",
+           "links":[
+              {
+                 "name":"Database (Getting Started)",
+                 "url":"https://laravel.com/docs/database"
+              },
+              {
+                 "name":"Query Builder",
+                 "url":"https://laravel.com/docs/queries"
+              },
+              {
+                 "name":"Pagination",
+                 "url":"https://laravel.com/docs/pagination"
+              },
+              {
+                 "name":"Migrations",
+                 "url":"https://laravel.com/docs/migrations"
+              },
+              {
+                 "name":"Database Seeding",
+                 "url":"https://laravel.com/docs/seeding"
+              },
+              {
+                 "name":"Redis",
+                 "url":"https://laravel.com/docs/redis"
+              }
+           ]
+        },
+        {
+           "name":"eloquuent",
+           "links":[
+              {
+                 "name":"Eloquent (Getting started)",
+                 "url":"https://laravel.com/docs/eloquent"
+              },
+              {
+                 "name":"Eloquent (Relationships)",
+                 "url":"https://laravel.com/docs/eloquent-relationships"
+              },
+              {
+                 "name":"Eloquent (Collections)",
+                 "url":"https://laravel.com/docs/eloquent-collections"
+              },
+              {
+                 "name":"Eloquent (Mutators & Casts)",
+                 "url":"https://laravel.com/docs/eloquent-mutators"
+              },
+              {
+                 "name":"Eloquent (API Resources)",
+                 "url":"https://laravel.com/docs/eloquent-resources"
+              },
+              {
+                 "name":"Eloquent (Serialization)",
+                 "url":"https://laravel.com/docs/eloquent-serialization"
+              }
+           ]
+        },
+        {
+           "name":"testing",
+           "links":[
+              {
+                 "name":"Testing (Getting Started)",
+                 "url":"https://laravel.com/docs/testing"
+              },
+              {
+                 "name":"HTTP Tests",
+                 "url":"https://laravel.com/docs/http-tests"
+              },
+              {
+                 "name":"Console Tests",
+                 "url":"https://laravel.com/docs/console-test"
+              },
+              {
+                 "name":"Laravel Dusk (Browser testing)",
+                 "url":"https://laravel.com/docs/dusk"
+              },
+              {
+                 "name":"Database testing",
+                 "url":"https://laravel.com/docs/database-testing"
+              },
+              {
+                 "name":"Mocking",
+                 "url":"https://laravel.com/docs/mocking"
+              }
+           ]
+        },
+        {
+           "name":"packages",
+           "links":[
+              {
+                 "name":"Laravel Breeze",
+                 "url":"https://laravel.com/docs/starter-kits#laravel-breeze"
+              },
+              {
+                 "name":"Laravel Cashier (Stripe)",
+                 "url":"https://laravel.com/docs/billing"
+              },
+              {
+                 "name":"Laravel Cashier (Paddle)",
+                 "url":"https://laravel.com/docs/cashier-paddle"
+              },
+              {
+                 "name":"Laravel Dusk",
+                 "url":"https://laravel.com/docs/dusk"
+              },
+              {
+                 "name":"Laravel Envoy",
+                 "url":"https://laravel.com/docs/envoy"
+              },
+              {
+                 "name":"Laravel Fortify",
+                 "url":"https://laravel.com/docs/fortify"
+              },
+              {
+                 "name":"Laravel Homestead",
+                 "url":"https://laravel.com/docs/homestead"
+              },
+              {
+                 "name":"Laravel Horizon",
+                 "url":"https://laravel.com/docs/horizon"
+              },
+              {
+                 "name":"Laravel Jetstream",
+                 "url":"https://jetstream.laravel.com/2.x/introduction.html"
+              },
+              {
+                 "name":"Laravel Octane",
+                 "url":"https://laravel.com/docs/octane"
+              },
+              {
+                 "name":"Laravel Passport",
+                 "url":"https://laravel.com/docs/passport"
+              },
+              {
+                 "name":"Laravel Sail",
+                 "url":"https://laravel.com/docs/sail"
+              },
+              {
+                 "name":"Laravel Sanctum",
+                 "url":"https://laravel.com/docs/sanctum"
+              },
+              {
+                 "name":"Laravel Scout",
+                 "url":"https://laravel.com/docs/scout"
+              },
+              {
+                 "name":"Laravel Socialite",
+                 "url":"https://laravel.com/docs/socialite"
+              },
+              {
+                 "name":"Laravel Telescope",
+                 "url":"https://laravel.com/docs/telescope"
+              },
+              {
+                 "name":"Laravel Valet",
+                 "url":"https://laravel.com/docs/valet"
+              }
+           ]
+        },
+        {
+           "name":"api",
+           "links":[
+              {
+                 "name":"Laravel API Documentation",
+                 "url":"https://laravel.com/docs/valet"
+              }
+           ]
+        }
+     ]
   },
   {
-    "name": "typescript",
-    "url": "https://typescriptlang.org/docs/handbook" 
+     "name":"typescript",
+     "url":"https://typescriptlang.org/docs/handbook",
+     "categories":[
+        {
+           "name":"The TypeScript Handbook",
+           "url":"https://www.typescriptlang.org/docs/handbook/intro.html"
+        },
+        {
+           "name":"The basics",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/basic-types.html"
+        },
+        {
+           "name":"Everyday types",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+        },
+        {
+           "name":"Narrowing",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/narrowing.html"
+        },
+        {
+           "name":"More on functions",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/functions.html"
+        },
+        {
+           "name":"Object Types",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/objects.html"
+        },
+        {
+           "name":"Type Manipulation (Creating Types from Types)",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/types-from-types.html"
+        },
+        {
+           "name":"Type Manipulation (Generics)",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/generics.html"
+        },
+        {
+           "name":"Type Manipulation (Keyof Type Operator)",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/keyof-types.html"
+        },
+        {
+           "name":"Type Manipulation (Indexed Access Types)",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html"
+        },
+        {
+           "name":"Type Manipulation (Conditional Types)",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/conditional-types.html"
+        },
+        {
+           "name":"Type Manipulation (Mapped Types)",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/mapped-types.html"
+        },
+        {
+           "name":"Type Manipulation (Template Literal Types)",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html"
+        },
+        {
+           "name":"Classes",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/classes.html"
+        },
+        {
+           "name":"Modules",
+           "url":"https://www.typescriptlang.org/docs/handbook/2/modules.html"
+        }
+     ]
   },
-  { 
-    "name": "mysql", 
-    "url": "https://mysql.org/doc" 
+  {
+     "name":"mysql",
+     "url":"https://mysql.org/doc"
   },
-  { 
-    "name": "python", 
-    "url": "https://docs.python.org" 
+  {
+     "name":"python",
+     "url":"https://docs.python.org"
   },
-  { 
-    "name": "django", 
-    "url": "https://docs.djangoproject.com" 
+  {
+     "name":"django",
+     "url":"https://docs.djangoproject.com"
   },
-  { 
-    "name": "c#", 
-    "url": "https://docs.microsoft.com/en-us/dotnet/csharp" 
+  {
+     "name":"c#",
+     "url":"https://docs.microsoft.com/en-us/dotnet/csharp"
   },
-  { 
-    "name": "php", 
-    "url": "https://php.net/docs/en" 
+  {
+     "name":"php",
+     "url":"https://php.net/docs/en"
   },
-  { 
-    "name": "react", 
-    "url": "https://reactjs.org/docs", 
-    "prefix": ".html"
+  {
+     "name":"react",
+     "url":"https://reactjs.org/docs",
+     "prefix":".html"
   },
-  { 
-    "name": "vue", 
-    "url": "https://vuejs.org/v2/guide" 
+  {
+     "name":"vue",
+     "url":"https://vuejs.org/v2/guide"
   },
-  { 
-    "name": "c++", 
-    "url": "https://www.cplusplus.com/doc" 
+  {
+     "name":"c++",
+     "url":"https://www.cplusplus.com/doc"
   },
-  { 
-    "name": "tailwind", 
-    "url": "https://tailwindcss.com/docs" 
+  {
+     "name":"tailwind",
+     "url":"https://tailwindcss.com/docs"
   },
-  { 
-    "name": "nodejs", 
-    "url": "https://nodejs.org/api", 
-   "prefix": ".html" 
+  {
+     "name":"nodejs",
+     "url":"https://nodejs.org/api",
+     "prefix":".html"
   }
 ]
