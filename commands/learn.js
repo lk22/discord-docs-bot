@@ -1,8 +1,12 @@
 const axios = require('axios')
+const fs = require('fs');
 module.exports = {
     name: 'learn',
     description: 'Make DocsBot learning a new path to a current documentation site with a new url',
     execute(message, args, urls) {
+        console.log(urls);
+
+        
         let documentation = urls.filter((url) => url.name === args[0]);
 
         if (args.length < 1) {
@@ -25,6 +29,9 @@ module.exports = {
                     return;
                 }
             } else {
+
+
+
                 let newDocumentation = {
                     name: args[0],
                     url: ""
@@ -35,6 +42,10 @@ module.exports = {
                 } else {
                     newDocumentation.url = args[1];
                     urls.push(newDocumentation);
+                    fs.open("documentations.json", 'w', (err) => {
+                        if (err) { console.log(err); return; }
+                        fs.writeFileSync('documentations.json', JSON.stringify(urls));
+                    })
                     message.channel.send(`I have now learned the documentation to "${newDocumentation.name}" with following url: "${newDocumentation.url}" you can now run /find git to visit git documentation.`);
                 }
             }

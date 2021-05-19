@@ -44,6 +44,7 @@ const commandsList = [
  * fire a command on a / command message
  */
 client.on('message', message => {
+    console.log(message);
 
     /**
      * validate author is not bot or the message starts with "/"
