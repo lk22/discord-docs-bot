@@ -5,7 +5,6 @@ module.exports = {
     description: 'Make DocsBot learning a new path to a current documentation site with a new url',
     execute(message, args, urls) {
         console.log(urls);
-
         
         let documentation = urls.filter((url) => url.name === args[0]);
 
