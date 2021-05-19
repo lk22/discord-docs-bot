@@ -7,7 +7,6 @@ module.exports = {
         console.log(urls);
         
         let documentation = urls.filter((url) => url.name === args[0]);
-
         if (args.length < 1) {
             message.channel.send("I need to learn a name for the documentation");
         } else {
@@ -28,9 +27,6 @@ module.exports = {
                     return;
                 }
             } else {
-
-
-
                 let newDocumentation = {
                     name: args[0],
                     url: ""
