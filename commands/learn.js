@@ -44,11 +44,25 @@ module.exports = {
                     urls.push(newDocumentation);
                     fs.open("documentations.json", 'w', (err) => {
                         if (err) { console.log(err); return; }
-                        fs.writeFileSync('documentations.json', JSON.stringify(urls));
+                        fs.writeFileSync('documentations.json', JSON.stringify(urls, null, 2));
                     })
                     message.channel.send(`I have now learned the documentation to "${newDocumentation.name}" with following url: "${newDocumentation.url}" you can now run /find git to visit git documentation.`);
                 }
             }
         }
     }
+}
+
+/**
+ * update file helper
+ * @param {*} file 
+ * @param {*} fileMode 
+ */
+function updateDocumentationList(file, fileMode, data) {
+    return fs.open(file, fileMode, (err) => {
+        if (err) {
+            console.log(err);
+            fs.writeFileSync(file, data)
+        }
+    })
 }
