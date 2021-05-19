@@ -9,9 +9,7 @@ module.exports = {
     name: "docs",
     description: "docs command to grant you the shortcut to you searching documentation",
     execute(message, args, urls) {
-        console.log(args);
         let documentation = urls.filter((url) => url.name === args[0]) // documentation url
-        // console.log(documentation[0].categories);
         if (args.length < 1 || documentation.length < 1) {
             message.channel.send(`I dont know that you are looking for "${args[0]}" if you are sure the documentation exists i can learn the way via my /learn command`);
         } else {
@@ -19,14 +17,19 @@ module.exports = {
             if (documentation) {
                 const name = documentation.name;
                 let url = documentation.url;
-                console.log(url)
                 const categories = documentation.categories;
 
                 let embedTitle = args[0];
 
-                if (!args[1] && categories.length > 0) {
+                if (!args[1] && !categories) {
+                    embedTitle += `You requested following documentation ${args[0]}`;
+                    embed.setTitle(embedTitle);
+                    embed.setColor("0xff0000");
+                    embed.setURL(url)
+                    message.channel.send(embed);
+                    return;
+                } else if (!args[1] && categories) {
                     let categoryList = `I found ${categories.length} categories on ${args[0]} \n\n`;
-                    console.log(categories);
                     categories.map((category) => {
                         categoryList += "- " + category.name;;
                         if (category.url) {
@@ -55,13 +58,7 @@ module.exports = {
                         subCategoryEmbed.setDescription(subCategoryList);
                         message.channel.send(subCategoryEmbed);
                     }
-                } else {
-                    embedTitle += `You requested following documentation ${args[0]} ${(args[1]) ? args[1] : ''}`;
-                    embed.setTitle(embedTitle);
-                    embed.setColor("0xff0000");
-                    embed.setURL(url)
-                    message.channel.send(embed);
-                }
+                } 
             }
         }
     }

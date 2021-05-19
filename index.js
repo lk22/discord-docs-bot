@@ -1,5 +1,6 @@
 const fileSystem = require('fs');
 const dotenv = require('dotenv');
+const env = dotenv.config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -68,8 +69,8 @@ client.on('message', message => {
     ) {
         embed.setTitle('Documentation list');
         let list = "I see you mentioned documentation in you message, i found following documentations for you \n";
-        urls.map((url) => {
-            list += " " + url.name + " => " + url.url + "\n";
+        docs.map((doc) => {
+            list += " " + doc.name + " => " + doc.url + "\n";
         });
         embed.setDescription(list)
         message.channel.send(embed); 
