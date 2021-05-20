@@ -529,5 +529,9 @@
     "name": "nodejs",
     "url": "https://nodejs.org/api",
     "prefix": ".html"
+  },
+  {
+    "name": "git",
+    "url": "https://git-scm.org/docs"
   }
 ]
