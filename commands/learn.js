@@ -12,12 +12,13 @@ module.exports = {
             if (documentation.length) {
                 if (args[0] === documentation[0].name) {
 
-                    const documentationCategories = documentation.categories;
+                    const documentationCategories = documentation[0].categories;
+                    const category = documentation[0].categories.filter((category) => category.name === args[1].replace("-category=", ""));
 
                     /**
                      * assume second argument is -category= and third argument is -url to the category
                      */
-                    if (args[1].indexOf("-category=") > -1 && args[2].indexOf("-url=") > -1) {
+                    if (args[1].indexOf("-category=") > -1 && args[1].replace("-category=", "") != category[0].name && args[2].indexOf("-url=") > -1) {
                         
                         const newCategory = (documentationCategories) ? [...documentationCategories, {
                             name: args[1].replace("-category=", ""),
@@ -28,19 +29,17 @@ module.exports = {
                                     url: args[2].replace("-url=", "")
                             }
                         ]
-
-                        Object.assign(documentation[0], { categories: newCategory })
-
-                        console.log(documentation);
-                        urls.push(documentation[0]);
+                        
+                        Object.assign(documentation[0],{ categories: newCategory })
                         fs.open("documentations.json", 'w', (err) => {
                             if (err) { console.log(err); return; }
-                            fs.writeFileSync('documentations.json', JSON.stringify(documentation, null, 2));
+                            fs.writeFileSync('documentations.json', JSON.stringify(urls, null, 2));
                         });
 
                         return;
                     } else {
-                        message.channel.send(`I know the documentation ${args[0]} run /docs ${args[0]}`);
+                        message.channel.send(`I know the documentation ${args[0]} run /find ${args[0]}`);
+                        return;
                     }
 
                 } else {
@@ -49,13 +48,6 @@ module.exports = {
                     return;
                 }
 
-                if (args[1] && args[1] != documentation[0].url) {
-                    documentation[0].url = args[1];
-                    message.channel.send(`Documentation ${args[0]} url updated -> ${args[1]}`); return;
-                } else {
-                    message.channel.send(`I know the requested url to the documentation ${args[0]} run /docs ${args[0]}`);
-                    return;
-                }
             } else {
                 let newDocumentation = {
                     name: args[0],

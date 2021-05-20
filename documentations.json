@@ -532,6 +532,16 @@
   },
   {
     "name": "git",
-    "url": "https://git-scm.org/docs"
+    "url": "https://git-scm.org/docs",
+    "categories": [
+      {
+        "name": "config",
+        "url": "https://git-scm.com/docs/git-init"
+      },
+      {
+        "name": "config",
+        "url": "https://git-scm.com/docs/git-init"
+      }
+    ]
   }
 ]
