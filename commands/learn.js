@@ -13,24 +13,23 @@ module.exports = {
                 if (args[0] === documentation[0].name) {
 
                     const documentationCategories = documentation[0].categories;
-                    const category = documentation[0].categories.filter((category) => category.name === args[1].replace("-category=", ""));
 
                     /**
                      * assume second argument is -category= and third argument is -url to the category
                      */
-                    if (args[1].indexOf("-category=") > -1 && args[1].replace("-category=", "") != category[0].name && args[2].indexOf("-url=") > -1) {
-                        
+                    if (args[1].indexOf("-c=") > -1 && args[2].indexOf("-u=") > -1) {
                         const newCategory = (documentationCategories) ? [...documentationCategories, {
-                            name: args[1].replace("-category=", ""),
-                            url: args[2].replace("-url=", "")
+                            name: args[1].replace("-c=", ""),
+                            url: args[2].replace("-u=", "")
                         }] : [
-                                {
-                                    name: args[1].replace("-category=", ""),
-                                    url: args[2].replace("-url=", "")
+                            {
+                                name: args[1].replace("-c=", ""),
+                                url: args[2].replace("-u=", "")
                             }
-                        ]
+                        ];
                         
-                        Object.assign(documentation[0],{ categories: newCategory })
+                        Object.assign(documentation[0], { categories: newCategory });
+
                         fs.open("documentations.json", 'w', (err) => {
                             if (err) { console.log(err); return; }
                             fs.writeFileSync('documentations.json', JSON.stringify(urls, null, 2));
@@ -41,7 +40,6 @@ module.exports = {
                         message.channel.send(`I know the documentation ${args[0]} run /find ${args[0]}`);
                         return;
                     }
-
                 } else {
                     documentation[0].name = args[0];
                     message.channel.send(`Documentation ${args[0]} name updated -> ${args[0]}`);

@@ -523,7 +523,69 @@
   },
   {
     "name": "tailwind",
-    "url": "https://tailwindcss.com/docs"
+    "url": "https://tailwindcss.com/docs",
+    "categories": [
+      {
+        "name": "install",
+        "url": "https://tailwindcss.com/docs/installation"
+      },
+      {
+        "name": "ugrade",
+        "url": "https://tailwindcss.com/docs/upgrading-to-v2"
+      },
+      {
+        "name": "preprocessors",
+        "url": "https://tailwindcss.com/docs/using-with-preprocessors"
+      },
+      {
+        "name": "optimize",
+        "url": "https://tailwindcss.com/docs/optimizing-for-production"
+      },
+      {
+        "name": "support",
+        "url": "https://tailwindcss.com/docs/browser-support"
+      },
+      {
+        "name": "intellisense",
+        "url": "https://tailwindcss.com/docs/intellisense"
+      },
+      {
+        "name": "utility-first",
+        "url": "https://tailwindcss.com/docs/utility-first"
+      },
+      {
+        "name": "responsive",
+        "url": "https://tailwindcss.com/docs/responsive-design"
+      },
+      {
+        "name": "states",
+        "url": "https://tailwindcss.com/docs/hover-focus-and-other-states"
+      },
+      {
+        "name": "dark-mode",
+        "url": "https://tailwindcss.com/docs/dark-mode"
+      },
+      {
+        "name": "base-styles",
+        "url": "https://tailwindcss.com/docs/adding-base-styles"
+      },
+      {
+        "name": "extracting",
+        "url": "https://tailwindcss.com/docs/extracting-components"
+      },
+      {
+        "name": "new-utilities",
+        "url": "https://tailwindcss.com/docs/adding-new-utilities"
+      },
+      {
+        "name": "functions-directives",
+        "url": "https://tailwindcss.com/docs/functions-and-directives"
+      },
+      {
+        "name": "config",
+        "url": "https://tailwindcss.com/docs/configuration"
+      }
+    ]
   },
   {
     "name": "nodejs",
