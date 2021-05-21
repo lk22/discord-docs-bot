@@ -7,6 +7,6 @@ module.exports = {
             commandMsg += command.name + " => " + command.description + "\n";
         });
 
-        message.channel.send(commandMsg);
+        message.reply(commandMsg);
     }
 }

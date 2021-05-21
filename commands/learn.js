@@ -7,7 +7,7 @@ module.exports = {
     execute(message, args, urls) {
         let documentation = urls.filter((url) => url.name === args[0]);
         if (args.length < 1) {
-            message.channel.send("I need to learn a name for the documentation");
+            message.reply("I need to learn a name for the documentation");
         } else {
             if (documentation.length) {
                 if (args[0] === documentation[0].name) {
@@ -37,12 +37,12 @@ module.exports = {
 
                         return;
                     } else {
-                        message.channel.send(`I know the documentation ${args[0]} run /find ${args[0]}`);
+                        message.reply(`I know the documentation ${args[0]} run /find ${args[0]}`);
                         return;
                     }
                 } else {
                     documentation[0].name = args[0];
-                    message.channel.send(`Documentation ${args[0]} name updated -> ${args[0]}`);
+                    message.reply(`Documentation ${args[0]} name updated -> ${args[0]}`);
                     return;
                 }
 
@@ -53,7 +53,7 @@ module.exports = {
                 };
 
                 if ( !args[1] ) {
-                    message.channel.send("I need to learn a url path for the documentation");
+                    message.reply("I need to learn a url path for the documentation");
                 } else {
                     newDocumentation.url = args[1];
                     urls.push(newDocumentation);
@@ -63,7 +63,7 @@ module.exports = {
                         fs.writeFileSync('documentations.json', JSON.stringify(urls, null, 2));
                     })
 
-                    message.channel.send(`I have now learned the documentation to "${newDocumentation.name}" with following url: "${newDocumentation.url}" you can now run /find git to visit git documentation.`);
+                    message.reply(`I have now learned the documentation to "${newDocumentation.name}" with following url: "${newDocumentation.url}" you can now run /find git to visit git documentation.`);
                 }
             }
         }

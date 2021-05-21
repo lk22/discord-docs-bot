@@ -118,8 +118,8 @@ client.on('message', message => {
         ) {
             client.commands.get('learn').execute(message, args, docs)
         } else {
-            message.channel.send(
-                message.author.username + ": You are not allowed to trigger this command request a ressource i need to learn from an admin or moderator member"
+            message.reply(
+                "You are not allowed to trigger this command request a ressource i need to learn from an admin or moderator member"
             );
         }
     }

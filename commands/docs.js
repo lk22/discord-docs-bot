@@ -26,7 +26,7 @@ module.exports = {
                     embed.setTitle(embedTitle);
                     embed.setColor("0xff0000");
                     embed.setURL(url)
-                    message.channel.send(embed);
+                    message.reply(embed);
                     return;
                 } else if (!args[1] && categories) {
                     let categoryList = `I found ${categories.length} categories on ${args[0]} \n\n`;
@@ -41,7 +41,7 @@ module.exports = {
                     let categoryEmbed = embed;
                     categoryEmbed.setTitle(args[0] + " categories");
                     categoryEmbed.setDescription(categoryList);
-                    message.channel.send(categoryEmbed);
+                    message.reply(categoryEmbed);
 
                 } else if (args[0] && args[1]) {
                     const category = documentation.categories.filter((cat) => cat.name === args[1]);
@@ -56,7 +56,7 @@ module.exports = {
                         let subCategoryEmbed = embed;
                         subCategoryEmbed.setTitle("I found following documentation in category: " + args[1]);
                         subCategoryEmbed.setDescription(subCategoryList);
-                        message.channel.send(subCategoryEmbed);
+                        message.reply(subCategoryEmbed);
                     }
                 } 
             }

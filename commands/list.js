@@ -15,6 +15,6 @@ module.exports = {
         });
 
         embed.setDescription(list)
-        message.channel.send(embed);
+        message.reply(embed);
     }
 }
