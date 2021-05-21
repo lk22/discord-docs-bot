@@ -8,6 +8,6 @@ module.exports = {
             ? `${author}: I dont know what to do with this argument: '${args[0]}'`
             : 'Hi ' + author + ' You pinged me! enter "/help" for commands list information'
 
-        message.channel.send(reply)
+        message.reply(reply)
     }
 }
