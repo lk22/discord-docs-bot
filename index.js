@@ -52,7 +52,7 @@ client.on('message', message => {
     }
 
     /**
-     * create arguments array to use when executing commands
+     * create arguments array to use when executing commandsc
      */
     const args = message.content.slice(command_prefix.length).split(" ");
     const command = args.shift().toLowerCase();

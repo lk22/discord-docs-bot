@@ -45,7 +45,6 @@ module.exports = {
                     message.reply(`Documentation ${args[0]} name updated -> ${args[0]}`);
                     return;
                 }
-
             } else {
                 let newDocumentation = {
                     name: args[0],
