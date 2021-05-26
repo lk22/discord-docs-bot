@@ -1,0 +1,6 @@
+[
+  {
+    "name": "laravel-get-route",
+    "content": "Route::get({routename}, [RouteController::class]);"
+  }
+]

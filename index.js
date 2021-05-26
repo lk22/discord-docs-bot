@@ -5,6 +5,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const docs = require('./documentations.json');
+const snippets = require('./snippets.json');
 
 const command_prefix = "-";
 
@@ -43,6 +44,7 @@ const commandsList = [
  * fire a command on a / command message
  */
 client.on('message', message => {
+    console.log(message);
 
     /**
      * validate author is not bot or the message starts with "/"
@@ -101,7 +103,7 @@ client.on('message', message => {
      * list all know documentations
      */
     if (command === "list-docs") {
-        client.commands.get('list').execute(message, args, docs);
+        client.commands.get('list').execute(message, args, docs, snippets);
     }
 
     /**
@@ -109,7 +111,7 @@ client.on('message', message => {
      * executing docs command, generating a shortcut to requested language or framework => /docs laravel blade -> https://laravel.com/docs/blade
      */
     if (command === "find") {
-        client.commands.get('docs').execute(message, args, docs)
+        client.commands.get('docs').execute(message, args, docs, snippets)
     }
 
     /**
