@@ -75,6 +75,11 @@ client.on('message', message => {
         message.channel.send(embed); 
     }
 
+    if (message.content.indexOf('docs') || message.content.indexOf('docsbot') || message.content.indexOf('DocsBot')) {
+        const greeting = "Hi there im DocsBot, im you fast shortcut to your documentation type /help to see list of commands i can do";
+        message.reply(greeting);
+    }
+
     /**
      * if message is /ping
      * executing ping command /commands/ping.js
