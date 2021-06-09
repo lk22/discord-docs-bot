@@ -22,15 +22,17 @@ module.exports = {
             embed.setDescription(list);
             message.channel.send(embed);
             return false;
+        } else {
+            const count = urls.length;
+            let list = "i found following documentations for you i found " + count + " documentations in my registry \n";
+            urls.map((url) => {
+                list += " " + url.name + " => " + url.url + "\n";
+            });
+    
+            embed.setDescription(list)
+            message.reply(embed);
         }
 
-        const count = urls.length;
-        let list = "i found following documentations for you i found " + count + " documentations in my registry \n";
-        urls.map((url) => {
-            list += " " + url.name + " => " + url.url + "\n";
-        });
-
-        embed.setDescription(list)
-        message.reply(embed);
+        
     }
 }

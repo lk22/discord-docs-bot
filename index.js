@@ -33,6 +33,9 @@ client.once('ready', () => {
  */
 let embed = new Discord.MessageEmbed().setColor('0xff0000');
 
+/**
+ * TODO: add snippet command to help list and snippet command to search for a specific snippet in the registry
+ */
 const commandsList = [
     { name: "/ping", description: "Helping you testing the bots connection status" },
     { name: "/help", description: "Grants you the command list for DocsBot" },
@@ -77,10 +80,10 @@ client.on('message', message => {
         message.channel.send(embed); 
     }
 
-    if (message.content.indexOf('docs') || message.content.indexOf('docsbot') || message.content.indexOf('DocsBot')) {
-        const greeting = "Hi there im DocsBot, im you fast shortcut to your documentation type /help to see list of commands i can do";
-        message.reply(greeting);
-    }
+    // if (message.content.indexOf('docs') > -1 || message.content.indexOf('docsbot') > -1 || message.content.indexOf('DocsBot') > -1) {
+    //     const greeting = "Hi there im DocsBot, im you fast shortcut to your documentation type /help to see list of commands i can do";
+    //     message.reply(greeting);
+    // }
 
     /**
      * if message is /ping

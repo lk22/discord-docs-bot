@@ -12,20 +12,7 @@ module.exports = {
         let documentation = urls.filter((url) => url.name === args[0]) // documentation url
         if (args.length < 1 || documentation.length < 1) {
             message.channel.send(`I dont know that you are looking for "${args[0]}" if you are sure the documentation exists i can learn the way via my /learn command`);
-        } else if (args[0] && args[0].indexOf('-s')) {
-            /**
-             * if first arguments contains -s flag for snippet search then check for second argument 
-             */
-            if (!args[1]) {
-                message.reply("I need a category to get the snippet from")
-            }
-
-            const snippet = snippets.map((snippet) => snippet.name === args[1]);
-            if (!snippet) {
-                message.reply("i could not find the snippet you are looking for try again");
-            }
-            
-        } else {
+        }  else {
             let documentation = urls.filter((url) => url.name === args[0])[0]; // documentation url
             if (documentation) {
                 const name = documentation.name;
@@ -58,7 +45,7 @@ module.exports = {
 
                 } else if (args[0] && args[1]) {
                     const category = documentation.categories.filter((cat) => cat.name === args[1]);
-
+                    
                     if (category[0].name === args[1] && category[0].links) {
                         let subCategoryList = "";
                         
