@@ -5,6 +5,7 @@ module.exports = {
     name: 'learn',
     description: 'Make DocsBot learning a new path to a current documentation site with a new url',
     execute(message, args, urls) {
+        console.log(args);
         let documentation = urls.filter((url) => url.name === args[0]);
         if (args.length < 1) {
             message.reply("I need to learn a name for the documentation");
@@ -18,12 +19,13 @@ module.exports = {
                      * assume second argument is -category= and third argument is -url to the category
                      */
                     if (args[1].indexOf("-c=") > -1 && args[2].indexOf("-u=") > -1) {
+                        const categoryVal = args[1].replace("-c=", "");
                         const newCategory = (documentationCategories) ? [...documentationCategories, {
-                            name: args[1].replace("-c=", ""),
+                            name: categoryVal,
                             url: args[2].replace("-u=", "")
                         }] : [
                             {
-                                name: args[1].replace("-c=", ""),
+                                name: categoryVal,
                                 url: args[2].replace("-u=", "")
                             }
                         ];
@@ -36,8 +38,30 @@ module.exports = {
                         });
 
                         return;
+                    } else if (args[1].indexOf('-c=') > -1 && args[2].indexOf('-sc=') > -1 && args[3].indexOf('-u=') > -1) {
+                        const categoryVal = args[1].replace("-c=", "")
+                        const subCategoryName = args[2].replace("-sc=", "")
+                        const subCategory = documentation[0].categories.filter((category) => category.name === categoryVal);
+
+                        const links = subCategory[0].links;
+
+                        const newSubCategory = [
+                            ...links,
+                            {
+                                name: subCategoryName,
+                                url: args[3].replace("-u=", "")
+                            }
+                        ];
+
+                        Object.assign(links, newSubCategory);
+                        
+                        fs.open("documentations.json", 'w', (err) => {
+                            if (err) { console.log(err); return; }
+                            fs.writeFileSync('documentations.json', JSON.stringify(urls, null, 2));
+                        });
+                        return;
                     } else {
-                        message.reply(`I know the documentation ${args[0]} run /find ${args[0]}`);
+                        message.reply(`I know the documentation ${args[0].replace('-c=', '')} run /find ${args[0].replace('-c=', '')}`);
                         return;
                     }
                 } else {

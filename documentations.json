@@ -116,6 +116,10 @@
           {
             "name": "Logging",
             "url": "https://laravel.com/docs/logging"
+          },
+          {
+            "name": "testing",
+            "url": "https://laravel.com/docs/basics/testing"
           }
         ]
       },
@@ -605,5 +609,9 @@
         "url": "https://git-scm.com/docs/git-init"
       }
     ]
+  },
+  {
+    "name": "-c=test",
+    "url": "-sc=test2"
   }
 ]

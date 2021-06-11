@@ -43,12 +43,18 @@ const commandsList = [
     { name: "/list-docs", description: "Listing all documentation shortcuts" } 
 ];
 
+const adminsCommandList = [
+    { name: "/ping", description: "Helping you testing the bots connection status" },
+    { name: "/help", description: "Grants you the command list for DocsBot" },
+    { name: "/find", description: "Gives you are shortcut to existing documentation from requested arguments" },
+    { name: "/list-docs", description: "Listing all documentation shortcuts" } 
+];
+
 /**
  * fire a command on a / command message
  */
 client.on('message', message => {
-    console.log(message);
-
+    // console.log(message)
     /**
      * validate author is not bot or the message starts with "/"
      */
