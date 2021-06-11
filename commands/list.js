@@ -9,20 +9,20 @@ module.exports = {
         embed.setColor('0xff0000');
         embed.setTitle('Documentation list');
 
-        /**
-         * if first command contains -s flag for snippets list all registered snippets
-         */
-        if (args[0] == args[0].indexOf('-s')) {
-            const snippetsCount = snippets.length;
-            let list = "I found follwoing snippets for you i have " + snippetsCount + "snippets in my registry";
+        // /**
+        //  * if first command contains -s flag for snippets list all registered snippets
+        //  */
+        // if (args[0] == args[0].indexOf('-s')) {
+        //     const snippetsCount = snippets.length;
+        //     let list = "I found follwoing snippets for you i have " + snippetsCount + "snippets in my registry";
 
-            snippets.map((snippet) => {
-                list += " " + snippet.name + " => " + snippet.content + "\n";
-            });
-            embed.setDescription(list);
-            message.channel.send(embed);
-            return false;
-        } else {
+        //     snippets.map((snippet) => {
+        //         list += " " + snippet.name + " => " + snippet.content + "\n";
+        //     });
+        //     embed.setDescription(list);
+        //     message.channel.send(embed);
+        //     return false;
+        // } else {
             const count = urls.length;
             let list = "i found following documentations for you i found " + count + " documentations in my registry \n";
             urls.map((url) => {
@@ -31,7 +31,7 @@ module.exports = {
     
             embed.setDescription(list)
             message.reply(embed);
-        }
+        // }
 
         
     }
