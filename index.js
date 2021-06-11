@@ -40,21 +40,24 @@ const commandsList = [
     { name: "/ping", description: "Helping you testing the bots connection status" },
     { name: "/help", description: "Grants you the command list for DocsBot" },
     { name: "/find", description: "Gives you are shortcut to existing documentation from requested arguments" },
-    { name: "/list-docs", description: "Listing all documentation shortcuts" } 
+    { name: "/list-docs", description: "Listing all documentation shortcuts" },
+    { name: "/repo, /repository", description: "Searching for a specific repository via github API integration following by a profile argument" }
 ];
 
 const adminsCommandList = [
     { name: "/ping", description: "Helping you testing the bots connection status" },
     { name: "/help", description: "Grants you the command list for DocsBot" },
     { name: "/find", description: "Gives you are shortcut to existing documentation from requested arguments" },
-    { name: "/list-docs", description: "Listing all documentation shortcuts" } 
+    { name: "/list-docs", description: "Listing all documentation shortcuts" },
+    { name: "/learn", description: "Giving the ability to let DocsBot to learn a new category with '-c' flag or subcategory with '-sc' flag or brand new main category for a language or framework maybe" },
+    { name: "/repo, /repository", description: "Searching for a specific repository via github API integration following by a profile argument" }
 ];
 
 /**
  * fire a command on a / command message
  */
 client.on('message', message => {
-    // console.log(message)
+
     /**
      * validate author is not bot or the message starts with "/"
      */
@@ -104,7 +107,11 @@ client.on('message', message => {
      * Showing help for commands list /commands/help.js
      */
     if (command === "help") {
-        client.commands.get('help').execute(message, args, commandsList)
+        if (message.member.roles.cache.some(role => role.name === "Admins")) {
+            client.commands.get('help').execute(message, args, adminsCommandList)
+        } else {
+            client.commands.get('help').execute(message, args, commandsList)
+        }
     }
 
     /**
@@ -138,6 +145,14 @@ client.on('message', message => {
                 "You are not allowed to trigger this command request a ressource i need to learn from an admin or moderator member"
             );
         }
+    }
+
+
+    /**
+     * search for a GitHub Repository for fast repository lookup
+     */
+    if (command === "repo" || command === "repository") {
+        client.commands.get('repo').execute(message, args);
     }
 })
 
